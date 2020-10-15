@@ -13,8 +13,53 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-  /*
-   * CSS image reference example.
-   */
-  background-image: url('./images/bg-pattern.png');
+  height: 100vh;
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+}
+.input-box {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  width: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  outline: none;
+  border: none;
+}
+
+.country__title-name {
+  text-align: center;
+  font-size: 52px;
+}
+
+.country__box {
+  display: flex;
+  justify-content: center;
+}
+
+.country__content {
+  margin-right: 60px;
+}
+
+.country__text {
+  font-size: 32px;
+}
+
+.country__text span {
+  font-weight: bold;
+}
+
+.country__languages-list {
+  font-size: 32px;
+  padding-left: 60px;
+}
+
+.country__img {
+  width: 30%;
 }
