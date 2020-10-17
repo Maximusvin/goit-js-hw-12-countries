@@ -51,9 +51,8 @@ function selectTypeOutputInfo(numberOfCountries) {
             refs.inputList.insertAdjacentHTML('beforeend',`<li>${country.name}</li>`)
         });             
 
-        refs.inputList.addEventListener('click', e => {  
-            console.log(e.target.textContent);              
-            refs.input.value = e.target.textContent;
+        refs.inputList.addEventListener('click', e => {                         
+            // refs.input.value = e.target.textContent;
             refs.inputList.innerHTML = '';
             addFullCoutryInfo(numberOfCountries);
         })                 
