@@ -1,2 +1,3 @@
-import './styles.css';
-import './js/update-markup.js'
+import './css/normalize.css'
+import './css/styles.css';
+import './js/renderPage'
