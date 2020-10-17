@@ -52,9 +52,14 @@ function selectTypeOutputInfo(numberOfCountries) {
         });             
 
         refs.inputList.addEventListener('click', e => {                         
-            // refs.input.value = e.target.textContent;
-            refs.inputList.innerHTML = '';
-            addFullCoutryInfo(numberOfCountries);
+            const getInputValue = refs.input.value = e.target.textContent;
+            clearContent();
+
+            numberOfCountries.forEach(country => {                
+                if(country.name === getInputValue) {
+                    addFullCoutryInfo({country})                    
+                }                
+            });  
         })                 
     }
  
