@@ -22,18 +22,11 @@ function handleGenerateListFromResponse(event) {
     getCountriesList(inputValue)
 }
 
-function addCoutriesListToHTML(countriesMarkup) {
-  const markup = countTemp(countriesMarkup);
-
-  refs.countryWrapper.innerHTML = '';
-  refs.countryWrapper.insertAdjacentHTML('beforeend', markup);
-}
-
 // Создаем разметку страны по шаблону hbs
 function addFullCoutryInfo(country) {
   const markup = countriesMarkupTMPT(country);
 
-//   Добавляем новую разметку страны
+   //   Добавляем новую разметку страны
   refs.countryContainer.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -43,7 +36,6 @@ function clearContent(){
   refs.inputList.innerHTML = '';
   refs.countryContainer.innerHTML = '';  
 }
-
 
 // Выводим значение в зависимости от полученого к-ва стран
 function selectTypeOutputInfo(numberOfCountries) {
@@ -59,9 +51,11 @@ function selectTypeOutputInfo(numberOfCountries) {
             refs.inputList.insertAdjacentHTML('beforeend',`<li>${country.name}</li>`)
         });             
 
-        refs.inputList.addEventListener('click', e => {                
+        refs.inputList.addEventListener('click', e => {  
+            console.log(e.target.textContent);              
             refs.input.value = e.target.textContent;
-            refs.inputList.innerHTML = '';                
+            refs.inputList.innerHTML = '';
+            addFullCoutryInfo(numberOfCountries);
         })                 
     }
  
