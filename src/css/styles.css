@@ -52,6 +52,7 @@ body {
 
 .input-list li {
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .country__title-name {
