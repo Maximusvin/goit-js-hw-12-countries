@@ -39,6 +39,7 @@ function clearContent(){
 
 // Выводим значение в зависимости от полученого к-ва стран
 function selectTypeOutputInfo(numberOfCountries) {
+  console.log(numberOfCountries);
 
   if (numberOfCountries.length < 2) {
     clearContent();
@@ -51,15 +52,13 @@ function selectTypeOutputInfo(numberOfCountries) {
             refs.inputList.insertAdjacentHTML('beforeend',`<li>${country.name}</li>`)
         });             
 
-        refs.inputList.addEventListener('click', e => {                         
-            const getInputValue = refs.input.value = e.target.textContent;
+        refs.inputList.addEventListener('click', e => {
             clearContent();
-
-            numberOfCountries.forEach(country => {                
-                if(country.name === getInputValue) {
-                    addFullCoutryInfo({country})                    
-                }                
-            });  
+            const getInputValue = refs.input.value = e.target.textContent;            
+            const country = numberOfCountries.find(country => {              
+              return country.name === getInputValue
+            })            
+            addFullCoutryInfo({country});
         })                 
     }
  
@@ -84,6 +83,5 @@ function getCountriesList(value) {
 function error404(err){
   clearContent();
   const message = 'Не корректный запрос. Повторите попытку еще раз'
-  refs.inputMessage.insertAdjacentHTML('beforeend', message);
-  console.log(err);
+  refs.inputMessage.insertAdjacentHTML('beforeend', message);  
 }
